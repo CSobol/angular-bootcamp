@@ -1,0 +1,8 @@
+
+<ul class="m12 videoList">
+  <li *ngFor="let video of (videoList | async)"
+      (click)="selectedVideo(video)" class="videoItem"
+      [class.selected]="clicked === video">
+    <video-item [video]="video"></video-item>
+  </li>
+</ul>

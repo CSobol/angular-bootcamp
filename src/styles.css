@@ -1,1 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.min.css";
+
+body{
+  box-sizing: border-box;
+}
+
+.videoSearch input[type='text']{
+  border:1px solid green;
+  border-width: 1px 1px 1px 1px !important;
+}
+
+
+
+.videoSearch input:focus{
+  animation: pulsate 1s ease-in-out infinite;
+  background-color: mediumpurple;
+  color: darkolivegreen;
+}
+.videoItem.selected{
+  background: radial-gradient(ellipse at top, #e66465, transparent),
+  radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  animation: blinker 1s linear infinite, wiggle 2s linear infinite;
+  color: #000;
+}
+.videoItem{
+  cursor: pointer;
+  margin:3px;
+  border-width:6px;
+  border-style: dashed;
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+  animation: createBox 1.25s;
+}
+.delaySpin{
+  animation:delayspin 3s infinite;
+}
+.videoTitle:before{
+  content: 'xX';
+}
+.videoTitle:after{
+  content: 'Xx';
+}
+
+.navbar{
+  background: linear-gradient(rgb(236, 0, 140), rgb(252, 103, 103));
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes createBox {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsate {
+0% {
+  -webkit-transform: scale(1.0, 1.0); opacity: 1.0;
+}
+50% {
+  -webkit-transform: scale(0.75, 0.75); opacity: 0.5;
+}
+100% {
+  -webkit-transform: scale(1.0, 1.0); opacity: 1.0;
+}
+}
+
+.logo{
+  width: 150px;
+}
+@keyframes delayspin {
+  0% {
+    transform: rotate(0deg);
+  }
+  98% {
+    transmit: rotate(0deg);
+  }
+  99%{
+      transform: rotate(-360deg);
+    }
+}
+.pb{
+  animation: wiggle 7s infinite;
+}
