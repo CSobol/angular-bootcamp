@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~materialize-css/dist/css/materialize.min.css";
-
+html{
+  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+}
 body{
   box-sizing: border-box;
 }
@@ -8,9 +10,13 @@ body{
 .videoSearch input[type='text']{
   border:1px solid green;
   border-width: 1px 1px 1px 1px !important;
+  display:block;
 }
 
-
+.hero{
+  background-image: url("/assets/manning.jpg");
+  background-size: contain;
+}
 
 .videoSearch input:focus{
   animation: pulsate 1s ease-in-out infinite;
@@ -30,6 +36,7 @@ body{
   border-style: dashed;
   border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
   animation: createBox 1.25s;
+  display:block;
 }
 .delaySpin{
   animation:delayspin 3s infinite;
@@ -72,15 +79,24 @@ body{
 }
 
 @keyframes pulsate {
-0% {
-  -webkit-transform: scale(1.0, 1.0); opacity: 1.0;
+  0% {
+    -webkit-transform: scale(1.0, 1.0); opacity: 1.0;
+  }
+  50% {
+    -webkit-transform: scale(0.75, 0.75); opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1.0, 1.0); opacity: 1.0;
+  }
 }
-50% {
-  -webkit-transform: scale(0.75, 0.75); opacity: 0.5;
-}
-100% {
-  -webkit-transform: scale(1.0, 1.0); opacity: 1.0;
-}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(2520deg);
+  }
 }
 
 .logo{

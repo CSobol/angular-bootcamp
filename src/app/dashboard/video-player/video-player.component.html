@@ -1,4 +1,8 @@
-<div class="row s12">
-  video-player works!
-  {{video?.title}}
-</div>
+<marquee class="row s12 videoWindow">
+  <marquee *ngIf="(videoDetails | async) as vid">
+    <h2>{{vid.title}}</h2>
+    <strong>By: <marquee>{{vid.author}}</marquee></strong>
+  </marquee>
+
+
+</marquee>

@@ -9,7 +9,13 @@ import {VideoItemComponent} from "./video-list/video-item/video-item.component";
 import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  {path: '', component: VideoDashboardComponent }
+  {
+    path: '',
+    component: VideoDashboardComponent,
+    children: [
+      { path: ':videoId', component: VideoPlayerComponent }
+    ]
+  }
 ];
 
 

@@ -3,7 +3,7 @@
     <app-video-list (clickedVideo)="currentVideo = $event"></app-video-list>
   </div>
   <div class="col m6">
-    <app-video-player [clickedVideo]="currentVideo"></app-video-player>
+    <router-outlet></router-outlet>
   </div>
   <div class="col m3">
     <app-stat-filters></app-stat-filters>

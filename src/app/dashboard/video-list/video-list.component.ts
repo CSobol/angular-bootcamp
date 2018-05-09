@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IVideo } from "../../types";
@@ -17,14 +17,10 @@ export class VideoListComponent implements OnInit {
     // http
     //   .get<IVideo[]>(this.VIDEO_URL + '/videos')
     //   .subscribe(videos => this.videoList = videos);
-    this.videoList = this.videoLoaderSvc.loadVideos();
+    this.videoList = this.videoLoaderSvc.getIncrementalVideoList();
   }
   clicked: IVideo;
-  selectedVideo(video: IVideo){
-    this.clicked = video;
-    this.clickedVideo.emit(video);
-  }
-  @Output() clickedVideo = new EventEmitter<IVideo>();
+
   ngOnInit() {
   }
 
